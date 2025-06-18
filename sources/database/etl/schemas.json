@@ -1,0 +1,165 @@
+{
+  "id": {
+    "format": "VARCHAR(255) PRIMARY KEY",
+    "definition": {
+      "{table_1}": {
+        "select": "MD5(CONCAT(stationcode,CAST('{timestamp}' AS VARCHAR(255))))"
+      }
+    }
+  },
+  "station_id": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_1}": {
+        "select": "MD5(stationcode)"
+      }
+    }
+  },
+  "download_timestamp": {
+    "format": "TIMESTAMP",
+    "definition": {
+      "{table_1}": {
+        "select": "CAST('{timestamp}' AS TIMESTAMP)"
+      }
+    }
+  },
+  "stationcode": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "name": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "is_install": {
+    "format": "BOOLEAN",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "{variable}='OUI'"
+      }
+    }
+  },
+  "capacity": {
+    "format": "INT",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "numdocksavailable": {
+    "format": "INT",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "numbikesavailable": {
+    "format": "INT",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "mechanical": {
+    "format": "INT",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "ebike": {
+    "format": "INT",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "is_renting": {
+    "format": "BOOLEAN",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "{variable}='OUI'"
+      }
+    }
+  },
+  "is_returning": {
+    "format": "BOOLEAN",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "{variable}='OUI'"
+      }
+    }
+  },
+  "update_timestamp": {
+    "format": "TIMESTAMP",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS TIMESTAMP)"
+      }
+    }
+  },
+  "coordonnees_geo": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_0}": {}
+    }
+  },
+  "longitude": {
+    "format": "NUMERIC",
+    "definition": {
+      "{table_1}": {
+        "select": "CAST((STRING_TO_ARRAY(coordonnees_geo,','))[1] AS NUMERIC)"
+      }
+    }
+  },
+  "latitude": {
+    "format": "NUMERIC",
+    "definition": {
+      "{table_1}": {
+        "select": "CAST((STRING_TO_ARRAY(coordonnees_geo,','))[2] AS NUMERIC)"
+      }
+    }
+  },
+  "nom_arrondissement_communes": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  },
+  "code_insee_commune": {
+    "format": "VARCHAR(255)",
+    "definition": {
+      "{table_0}": {},
+      "{table_1}": {
+        "select": "CAST({variable} AS {format})"
+      }
+    }
+  }
+}
