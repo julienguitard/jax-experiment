@@ -1,1 +1,1 @@
-# jax-experiement
+# jax-experiment
